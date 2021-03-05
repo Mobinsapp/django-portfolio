@@ -1,0 +1,21 @@
+<a href=" {% url 'blog:all_blogs'%}">Blog</a>
+
+<h1>this is the homepage</h1>
+
+{% load static %}
+
+<p><img src="{% static 'portfolio/Tahar.jpg' %}" width="250" alt=""></p>
+
+{% for projectitem in projects %}
+
+<h2>{{ projectitem.title }}</h2>
+<p>{{ projectitem.description }}</p>
+<p><img src="{{ projectitem.image.url }}" alt="" height="240" width="170"></p>
+
+{% if projectitem.url %}
+
+<p class=""><a href="{{ projectitem.url }}">Link</a></p>
+
+{% endif %}
+
+{% endfor %}

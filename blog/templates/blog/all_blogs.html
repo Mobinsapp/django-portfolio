@@ -1,0 +1,15 @@
+Hello blogs
+
+Number of blogds displayed : {{ blogs.count }}
+
+{% for blogitem in blogs %}
+
+
+<a href="{% url 'blog:detail' blogitem.id %}"><h2>{{ blogitem.title }}</h2></a>
+<h4>{{ blogitem.date }}</h4>
+<p>{{ blogitem.description }}</p>
+<img src="{{ blogitem.image.url }}" alt="" width="140" height="280">
+<a href="{{ blogitem.url }}">Link</a>
+
+
+{% endfor %}
